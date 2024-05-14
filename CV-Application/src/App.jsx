@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import { personalData } from './Components/Data'
+import { useState } from 'react'
+import Display from './Components/Display'
+import { InputPersonal } from './Components/InputPersonal'
 function App() {
-  const [count, setCount] = useState(0)
+  const [personal, setPersonal] = useState(personalData)
 
+  
+
+  const handlePersonal = (e) => {
+    const newPersonal = { ...personal, [e.target.name]: e.target.value }
+    setPersonal(newPersonal)
+  }
+  console.log(personal)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+    
+    <h1>Hello World</h1>
+
+      <div className='SideBar'>
+        <h2>Personal Details</h2>
+
+        <InputPersonal
+          label='Name'
+          name='name'
+          value={personal.name}
+          placeholder='Name'
+          handlePersonal={handlePersonal}
+        />
+
+        <InputPersonal
+          label='Email'
+          name='email'
+          value={personal.email}
+          placeholder='Email'
+          handlePersonal={handlePersonal}
+        />
+
+        <InputPersonal
+          label='Phone'
+          name='phone'
+          value={personal.phone}
+          placeholder='Phone'
+          handlePersonal={handlePersonal}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    <Display personal={personal} />
+    </div>
   )
 }
 
