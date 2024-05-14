@@ -1,13 +1,14 @@
 import './App.css'
-import { personalData, educationData } from './Components/Data'
+import { personalData, educationData, experienceData } from './Components/Data'
 import { useState } from 'react'
 import Display from './Components/Display'
 import { InputPersonal } from './Components/InputPersonal'
 import { EducationField } from './Components/InputEducation'
+import ExperienceField from './Components/InputExperience'
 function App() {
   const [personal, setPersonal] = useState(personalData)
   const [education, setEducation] = useState(educationData)
-
+  const [experience, setExperience] = useState( experienceData)
   
 
   const handlePersonal = (e) => {
@@ -47,13 +48,17 @@ function App() {
     setEducation(newEducation)
   }
 
+  const handleExperienceChange = (index, field, value) => {
+    const newExperience = experience.map((exp, i) => (i === index ? { ...exp, [field]: value } : exp))
+    setExperience(newExperience)
+  }
+
 
   console.log(personal)
   console.log("education", education)
   return (
-    <div>
+    <div className='container'>
     
-    <h1>Hello World</h1>
 
       <div className='SideBar'>
         <h2>Personal Details</h2>
@@ -96,9 +101,26 @@ function App() {
         <button onClick={() => addNewentry(setEducation, { name: '', year: '', grades: [] })}>Add Education</button>
 
 
-      </div>
+        <h2>Experience</h2>
 
-    <Display personal={personal} education={education}/>
+        {experience.map((exp, index) => (
+          <ExperienceField
+            key={index}
+            index={index}
+            exp={exp}
+            handleExperienceChange={handleExperienceChange}
+          />
+
+        ))}
+        <button onClick={() => addNewentry(setExperience, { name: '', year: '', about: '' })}>Add Experience</button>
+
+
+
+      </div>
+      <div className='main'>
+
+        <Display personal={personal} education={education} experience={experience}/>
+      </div>
     </div>
   )
 }

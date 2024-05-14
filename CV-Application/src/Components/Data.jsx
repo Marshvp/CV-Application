@@ -24,8 +24,14 @@ export const educationData = [
 
 export const experienceData = [
     {
-        name: "Company Name",
-        year: "2010-2015"
+        name: "Careium",
+        year: "2010-2015",
+        about: "About Company"
+    },
+    {
+        name: "Tesco",
+        year: "2010-2015",
+        about: "About Company"
     }
     // array so up to 3 can be added
 ]
