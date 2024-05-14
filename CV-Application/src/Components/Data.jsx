@@ -7,10 +7,19 @@ export const personalData = {
 
 export const educationData = [
     {
-        name: "School Name",
-        year: "2010-2015"
+        name: "Stocky",
+        year: "2010-2015",
+        grades: [
+            {
+                name: "Grade Name",
+                grade: "Grade"
+            },
+            {
+                name: "Math",
+                grade: "C"
+            }
+        ]
     }
-    // array so up to 3 can be added
 ]
 
 export const experienceData = [
