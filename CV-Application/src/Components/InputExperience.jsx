@@ -1,4 +1,4 @@
-const ExperienceField = ({ index, exp, handleExperienceChange }) => {
+const ExperienceField = ({ index, exp, handleExperienceChange, removeEntry }) => {
     return (
         <div className="InputExperience">
             <h4>{index + 1}</h4>
@@ -26,6 +26,8 @@ const ExperienceField = ({ index, exp, handleExperienceChange }) => {
                 onChange={(e) => handleExperienceChange(index, 'about', e.target.value)}
                 maxLength={300}
             />
+
+            <button onClick={removeEntry}>Remove</button>
         </div>
     )
 }

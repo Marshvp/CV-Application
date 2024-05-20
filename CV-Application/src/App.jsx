@@ -38,6 +38,10 @@ function App() {
     setData((prevData) => [...prevData, newEntry])
   }
 
+  const removeEntry = (setData, index) => {
+    setData((prevData) => prevData.filter((_, i) => i !== index))
+  }
+
   const addNewGrade = (eduIndex) => {
     const newEducation = education.map((edu, i) => {
       if (i === eduIndex) {
@@ -96,6 +100,7 @@ function App() {
             handleEduChange={handleEduChange}
             handleGradeChange={handleGradeChange}
             addNewGrade={addNewGrade}
+            removeEntry={() => removeEntry(setEducation, index)}
           />
         ))}
         <button onClick={() => addNewentry(setEducation, { name: '', year: '', grades: [] })}>Add Education</button>
@@ -109,6 +114,7 @@ function App() {
             index={index}
             exp={exp}
             handleExperienceChange={handleExperienceChange}
+            removeEntry={() => removeEntry(setExperience, index)}
           />
 
         ))}

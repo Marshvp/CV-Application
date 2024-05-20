@@ -1,4 +1,4 @@
-export const EducationField = ({ eduIndex, edu, handleEduChange, handleGradeChange, addNewGrade }) => {
+export const EducationField = ({ eduIndex, edu, handleEduChange, handleGradeChange, addNewGrade, removeEntry }) => {
 
     return (
 
@@ -44,7 +44,8 @@ export const EducationField = ({ eduIndex, edu, handleEduChange, handleGradeChan
                 </div>
             ))}
             <button onClick={() => addNewGrade(eduIndex)}>Add Grade</button>
-
+            
+            <button onClick={removeEntry}>Remove Entry</button>
         </div>
          
     )
