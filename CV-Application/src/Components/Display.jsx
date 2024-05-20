@@ -52,11 +52,11 @@
                 <h1>Education</h1>
                 {education.map((edu, index) => (
                     <div key={index}>
-                        <h2>{edu.name}</h2>
-                        <h3>{edu.year}</h3>
+                        <h2>School: {edu.name}</h2>
+                        <h4>Years: {edu.year}</h4>
                         {edu.grades.map((grade, index) => (
-                            <div key={index}>
-                                <h4>{grade.name}</h4>
+                            <div className="grades" key={index}>
+                                <h4>{grade.name}:</h4>
                                 <h5>{grade.grade}</h5>
                             </div>
                         ))}

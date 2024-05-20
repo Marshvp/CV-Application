@@ -27,7 +27,7 @@ const ExperienceField = ({ index, exp, handleExperienceChange, removeEntry }) =>
                 maxLength={300}
             />
 
-            <button onClick={removeEntry}>Remove</button>
+            <button className="entryButtons" onClick={removeEntry}>Remove</button>
         </div>
     )
 }

@@ -43,9 +43,9 @@ export const EducationField = ({ eduIndex, edu, handleEduChange, handleGradeChan
 
                 </div>
             ))}
-            <button onClick={() => addNewGrade(eduIndex)}>Add Grade</button>
+            <button className="entryButtons" onClick={() => addNewGrade(eduIndex)}>Add Grade</button>
             
-            <button onClick={removeEntry}>Remove Entry</button>
+            <button className="entryButtons" onClick={removeEntry}>Remove Entry</button>
         </div>
          
     )

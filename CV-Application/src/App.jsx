@@ -65,63 +65,64 @@ function App() {
     
 
       <div className='SideBar'>
-        <h2>Personal Details</h2>
+        <div className="sideBar-Content">
+          <h2>Personal Details</h2>
 
-        <InputPersonal
-          label='Name'
-          name='name'
-          value={personal.name}
-          placeholder='Name'
-          handlePersonal={handlePersonal}
-        />
-
-        <InputPersonal
-          label='Email'
-          name='email'
-          value={personal.email}
-          placeholder='Email'
-          handlePersonal={handlePersonal}
-        />
-
-        <InputPersonal
-          label='Phone'
-          name='phone'
-          value={personal.phone}
-          placeholder='Phone'
-          handlePersonal={handlePersonal}
-        />
-
-        <h2>Education</h2>
-        {education.map((edu, index) => (
-          <EducationField
-            key={index}
-            eduIndex={index}
-            edu={edu}
-            handleEduChange={handleEduChange}
-            handleGradeChange={handleGradeChange}
-            addNewGrade={addNewGrade}
-            removeEntry={() => removeEntry(setEducation, index)}
-          />
-        ))}
-        <button onClick={() => addNewentry(setEducation, { name: '', year: '', grades: [] })}>Add Education</button>
-
-
-        <h2>Experience</h2>
-
-        {experience.map((exp, index) => (
-          <ExperienceField
-            key={index}
-            index={index}
-            exp={exp}
-            handleExperienceChange={handleExperienceChange}
-            removeEntry={() => removeEntry(setExperience, index)}
+          <InputPersonal
+            label='Name'
+            name='name'
+            value={personal.name}
+            placeholder='Name'
+            handlePersonal={handlePersonal}
           />
 
-        ))}
-        <button onClick={() => addNewentry(setExperience, { name: '', year: '', about: '' })}>Add Experience</button>
+          <InputPersonal
+            label='Email'
+            name='email'
+            value={personal.email}
+            placeholder='Email'
+            handlePersonal={handlePersonal}
+          />
+
+          <InputPersonal
+            label='Phone'
+            name='phone'
+            value={personal.phone}
+            placeholder='Phone'
+            handlePersonal={handlePersonal}
+          />
+
+          <h2>Education</h2>
+          {education.map((edu, index) => (
+            <EducationField
+              key={index}
+              eduIndex={index}
+              edu={edu}
+              handleEduChange={handleEduChange}
+              handleGradeChange={handleGradeChange}
+              addNewGrade={addNewGrade}
+              removeEntry={() => removeEntry(setEducation, index)}
+            />
+          ))}
+          <button onClick={() => addNewentry(setEducation, { name: '', year: '', grades: [] })}>Add Education</button>
 
 
+          <h2>Experience</h2>
 
+          {experience.map((exp, index) => (
+            <ExperienceField
+              key={index}
+              index={index}
+              exp={exp}
+              handleExperienceChange={handleExperienceChange}
+              removeEntry={() => removeEntry(setExperience, index)}
+            />
+
+          ))}
+          <button onClick={() => addNewentry(setExperience, { name: '', year: '', about: '' })}>Add Experience</button>
+
+
+        </div>
       </div>
       <div className='main'>
 
