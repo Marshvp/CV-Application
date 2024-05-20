@@ -57,7 +57,7 @@
                         {edu.grades.map((grade, index) => (
                             <div className="grades" key={index}>
                                 <h4>{grade.name}:</h4>
-                                <h5>{grade.grade}</h5>
+                                <h4>{grade.grade}</h4>
                             </div>
                         ))}
                     </div>
