@@ -1,4 +1,18 @@
 .container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 3fr;
+}
+
+.main {
+    border: 1px solid black;
+}
+
+.main-Content {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.personal {
+    
+    text-align: right;
 }
